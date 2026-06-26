@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".UI.ListarPedidoActivity">
+
+    <!-- Título -->
+    <TextView
+        android:id="@+id/tvTituloPedidos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Gestión de Pedidos"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Botón principal para listar pedidos -->
+    <Button
+        android:id="@+id/btnListarPedidos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cargar Pedidos"
+        android:backgroundTint="#2196F3"
+        app:layout_constraintTop_toBottomOf="@id/tvTituloPedidos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Botón para crear nuevo pedido -->
+    <Button
+        android:id="@+id/btnNuevoPedido"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="➕ Nuevo Pedido"
+        android:backgroundTint="#4CAF50"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/btnListarPedidos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Botones de navegación -->
+    <LinearLayout
+        android:id="@+id/linearLayoutNavPedido"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/btnNuevoPedido"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <Button
+            android:id="@+id/btnIrClientesDesdePedido"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="👥 Clientes"
+            android:layout_marginEnd="8dp"
+            android:backgroundTint="#FF9800"/>
+
+        <Button
+            android:id="@+id/btnIrComidasDesdePedido"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="🍽️ Comidas"
+            android:layout_marginStart="8dp"
+            android:backgroundTint="#9C27B0"/>
+
+    </LinearLayout>
+
+    <!-- Botón para volver al menú principal -->
+    <Button
+        android:id="@+id/btnVolverMainDesdePedido"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="← Volver al Menú"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/linearLayoutNavPedido"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Lista de pedidos -->
+    <ListView
+        android:id="@+id/lvPedidos"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/btnVolverMainDesdePedido"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
